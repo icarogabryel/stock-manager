@@ -1,0 +1,20 @@
+{% extends 'components/base.html' %}
+
+{% block title %}Stock Manager{% endblock title %}
+
+{% block content %}
+    <h1>Stock Manager</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.name }}
+                <a href="{% url 'product_delete' product.product_id %}">
+                    <button>Delete Item</button>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'product_create' %}">
+        <button>Create Item</button>
+    </a>
+{% endblock %}
