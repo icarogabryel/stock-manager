@@ -1,6 +1,6 @@
 {% extends "components/base.html" %}
 
-{% block title %} Delete Product {% endblock title %}
+{% block title %}Delete Product{% endblock title %}
 
 {% block content %}
     <h1>Delete Product</h1>
@@ -8,5 +8,8 @@
         {% csrf_token %}
         <p>Are you sure you want to delete {{ object.name }}?</p>
         <button type="submit">Delete</button>
+        <a href="{% url 'product_list' %}">
+            <button type="button">Cancel</button>
+        </a>
     </form>
 {% endblock %}

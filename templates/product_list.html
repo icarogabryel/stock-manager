@@ -8,6 +8,9 @@
         {% for product in products %}
             <li>
                 {{ product.name }}
+                <a href="{% url 'product_update' product.product_id %}">
+                    <button>Update Item</button>
+                </a>
                 <a href="{% url 'product_delete' product.product_id %}">
                     <button>Delete Item</button>
                 </a>
