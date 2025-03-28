@@ -18,8 +18,6 @@
         <label for="quantity">Quantity:</label>
         <input type="number" name="quantity" value="{{ product.quantity }}">
         <br>
-        <label for="is_active">Is Active:</label>
-        <input type="checkbox" name="is_active" {% if product.is_active %}checked{% endif %}>
         <button type="submit">Update</button>
     </form>
     <a href="{% url 'product_list' %}">
