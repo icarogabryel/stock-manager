@@ -16,12 +16,13 @@
         <input type="number" name="price" value="{{ product.price }}">
         <br>
         <label for="quantity">Quantity:</label>
-        <input type="number" name="quantity" value="{{ product.stock }}">
+        <input type="number" name="quantity" value="{{ product.quantity }}">
         <br>
         <label for="is_active">Is Active:</label>
         <input type="checkbox" name="is_active" {% if product.is_active %}checked{% endif %}>
         <button type="submit">Update</button>
     </form>
     <a href="{% url 'product_list' %}">
-        <button>Cancel</button>
+        <button>Go Back</button>
+    </a>
 {% endblock %}
