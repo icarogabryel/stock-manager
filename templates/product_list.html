@@ -3,21 +3,37 @@
 {% block title %}Stock Manager{% endblock title %}
 
 {% block content %}
-    <h1>Stock Manager</h1>
-    <ul>
+<h1>Stock Manager</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for product in products %}
-            <li>
-                {{ product.name }}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>
                 <a href="{% url 'product_update' product.product_id %}">
-                    <button>Update Item</button>
+                    <button>Update</button>
                 </a>
                 <a href="{% url 'product_delete' product.product_id %}">
-                    <button>Delete Item</button>
+                    <button>Delete</button>
                 </a>
-            </li>
+            </td>
+        </tr>
         {% endfor %}
-    </ul>
-    <a href="{% url 'product_create' %}">
-        <button>Create Item</button>
-    </a>
+    </tbody>
+</table>
+<a href="{% url 'product_create' %}">
+    <button>Create Item</button>
+</a>
 {% endblock %}
